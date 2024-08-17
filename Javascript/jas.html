@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>learn javacript</title>
+    </head>
+    <body>
+        <p id="demo"></p>
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+        <button onclick="document.getElementById('demo4').innerHTML=Date()">time?</button>
+        <p id="demo4"></p>
+        <script>
+            let x, y;
+            x = 5;
+            y = 6;
+            document.getElementById("demo").innerHTML=x+y;
+            var name="ann";
+            var nameLast="mary";
+            document.getElementById("demo1").innerHTML = name+nameLast;
+            const a=1;
+            const b=2;
+            let d=a+b;
+            document.getElementById("demo2").innerHTML =d;
+            let text1="2";
+            let text2="3";
+            let result = text1 < text2;
+            document.getElementById("demo").innerHTML="3 is greater than 2? "+ result;
+            let a1="ann";
+            let a2="mary";
+            let a3=a1+" "+a2;
+            document.getElementById("demo").innerHTML=a3;
+            const number=[1,2,3,4,5,6,7,8];
+            document.getElementById("demo").innerHTML=number[2];
+            number.push(9);
+            document.getElementById("demo").innerHTML=number;
+            number.pop(9);
+            document.getElementById("demo").innerHTML=number;
+            number[5]=0;
+            document.getElementById("demo").innerHTML=number;
+            const c=10;
+            {  
+            const c=2;
+            document.getElementById("demo").innerHTML=c;
+            }
+            <!--document.getElementById("demo").innerHTML=c;-->
+            document.getElementById("demo").innerHTML=100/50*3;
+            x+=5;
+            document.getElementById("demo").innerHTML="Value of x is: "+x;
+            function myFunction(p1,p2) {
+                return p1+p2;
+            }
+            result = myFunction(1,2);
+            document.getElementById("demo").innerHTML=result;
+            function toCelsius(f) {
+                return (5/9)*(f-32);
+            }
+            let value = toCelsius;
+            document.getElementById("demo").innerHTML=value;
+            let text="The temperature is "+toCelsius(77)+" Celsius.";
+            document.getElementById("demo").innerHTML=text;
+            document.getElementById("demo").innerHTML=typeof(result);
+            const person={firstName:"John",lastName:"Doe",age:50,eyeColor:"blue"};
+            document.getElementById("demo").innerHTML=person.firstName+" is "+person.age+" years old.";
+            const person1=new Object();
+            person1.firstName="John";
+            person1.lastName="Doe";
+            person1.age=50;
+            person1.eyeColor="blue"; 
+            document.getElementById("demo").innerHTML=person1.firstName+" is "+person1["age"]+" years old.";
+            person1.nationality="indian";
+            document.getElementById("demo1").innerHTML=person1.nationality;
+            delete person1.age;
+            document.getElementById("demo").innerHTML=person1.firstName+" is "+person1["age"]+" years old.";
+            const myObj = {name:"John",age:30,myCars:{car1:"Ford",car2:"BMW",car3:"Fiat"}}
+            document.getElementById("demo").innerHTML=myObj.myCars.car2;
+            document.getElementById("demo").innerHTML=myObj["myCars"]["car2"];
+            let p1="myCars";
+            let p2="car2";
+            document.getElementById("demo").innerHTML=myObj[p1][p2];
+            person.name=function() {
+                return (this.firstName+ " " +this.lastName).toUpperCase();
+            };
+            document.getElementById("demo2").innerHTML="My father is "+person.name(); 
+            const myArray = Object.values(person);//creaye an array
+            document.getElementById("demo1").innerHTML = myArray;
+            function person2(first,last,age,eye) {
+                this.firstName = first;
+                this.lastName = last;
+                this.age = age;
+                this.eyeColor = eye;
+            }
+            const myFather = new person2("John", "Doe", 50, "blue");
+            document.getElementById("demo2").innerHTML="My father is "+myFather.age+".";
+            person2.prototype.nationality = "INDAIN";
+            document.getElementById("demo2").innerHTML="The nationality of my father is "+myFather.nationality;
+            person2.changeName=function(){
+                this.lastName="ouu";
+            } 
+            person2.changeName();
+            document.getElementById("demo2").innerHTML=person2.lastName;
+            let h="";
+            for (let[data,value] of Object.entries(person1)) {
+               h+=data+":"+value+"<br>";
+            }
+            document.getElementById("demo").innerHTML = JSON.stringify(person);
+            document.getElementById("demo1").innerHTML=h;
+            x=3;
+            for (let i=0;i<6;i++) {
+                x=x+i;
+            }
+            document.getElementById("demo").innerHTML=x;
+            for (let f in person1) {
+                h+= person[f];
+            }
+            document.getElementById("demo").innerHTML=h;
+        </script>
+    </body>
+</html>
